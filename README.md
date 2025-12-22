@@ -30,7 +30,6 @@ A modern, responsive, and interactive weather application built with **HTML**, *
 
 ## Demo
 ![Weather App Screenshot 1](https://github.com/DantelCode/weather-app/blob/main/api/screenshots/1.png)
-![Weather App Screenshot 2](https://github.com/DantelCode/weather-app/blob/main/api/screenshots/1.png)
 
 You can also access the live demo [here](https://weather-nine-indol.vercel.app/).
 
@@ -102,3 +101,4 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 ## Acknowledgements
 * [wttr.in API](https://wttr.in/) for providing weather data.
 * [Chart.js](https://www.chartjs.org/) for interactive graphing.
+
