@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- ================= META ================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+
+  <!-- ================= FONTS & STYLES ================= -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/weather.css">
+</head>
+
+<body>
+
+  <!-- ================= APP CONTAINER ================= -->
+  <div class="container">
+
+    <!-- ================= HEADER ================= -->
+    <header>
+      <div class="searchBar">
+        <svg viewBox="0 0 24 24" class="search-icon">
+          <circle cx="11" cy="11" r="7"></circle>
+          <line x1="16.5" y1="16.5" x2="22" y2="22"></line>
+        </svg>
+        <input type="search" id="cityInput" placeholder="Search city">
+        <button id="fetchBtn" class="search-btn">
+          <span class="btn-text">Search</span>
+          <span class="btn-loader"></span>
+        </button>
+      </div>
+
+      <button id="changeTemp" class="temp-toggle">
+        <span class="toggle-thumb">°C</span>
+      </button>
+    </header>
+
+    <!-- ================= OVERVIEW ================= -->
+    <section class="overview">
+
+      <div class="top">
+        <div id="weatherIcon">
+          <div id="weathercvg"></div>
+        </div>
+
+        <div class="detail">
+          <span id="cityName"></span>
+          <span id="condition"></span>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <nav>
+          <li class="active" data-type="today">Today</li>
+          <li data-type="weekly">This Week</li>
+          <div class="indicator"></div>
+        </nav>
+
+        <div id="forecastList"></div>
+      </div>
+    </section>
+
+    <!-- ================= WEATHER DETAILS ================= -->
+    <section class="weather-details">
+
+      <div class="panel-item">
+        <div>Air Quality</div>
+        <div class="air-q">
+          <div id="aqText"></div>
+          <div class="aq-range">
+            <div class="aq-fill" id="aqValue"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-item">
+        <div>Sunrise / Sunset</div>
+        <div class="sun-graph" id="sunGraph"></div>
+        <div id="sunTimes"></div>
+      </div>
+
+      <div class="panel-item">
+        <div>Temperature Graph</div>
+        <canvas id="tempGraph" width="300" height="100"></canvas>
+      </div>
+
+      <div class="panel-item">
+        <div>Wind</div>
+        <div id="wind" class="data-content"></div>
+      </div>
+
+      <div class="panel-item">
+        <div>Rainfall</div>
+        <div id="rainfall" class="data-content"></div>
+      </div>
+
+      <div class="panel-item">
+        <div>Humidity</div>
+        <div id="humidity" class="data-content"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/weather.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('sw.js');
+    }
+  </script>
+</body>
+
+</html>
